@@ -14,4 +14,4 @@ You learned about the Enumerable module that gets mixed into the Array and Hash 
 
 #### Contact
 * yergeshovansar@gmail.com
-* [FaceBook](facebook.com/ansar.yergeshov)
+* [FaceBook](https://facebook.com/ansar.yergeshov)
