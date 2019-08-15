@@ -2,7 +2,6 @@
 
 # Enumerable module
 module Enumerable
-  
   # my_each method
   def my_each
     help = self 
