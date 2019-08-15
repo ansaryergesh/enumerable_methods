@@ -27,7 +27,8 @@ module Enumerable
   # my_select
   def my_select 
     array = []
-      self.my_each do |x|
+    help = self
+      help.my_each do |x|
         if yield(x)
           array << x
         end
@@ -38,7 +39,8 @@ module Enumerable
   # my_all
   def my_all? 
     flag = true
-    self.my_each do |x|
+    help = self
+    help.my_each do |x|
       if yield(x) == false 
         flag = false
       end
@@ -49,7 +51,8 @@ module Enumerable
   # my_any?
   def my_any?
     flag = false
-    self.my_each do |x|
+    help = self
+    help.my_each do |x|
       flag =  yield(x)
         break if flag
     end
@@ -59,7 +62,8 @@ module Enumerable
   # my_none?
   def my_none?
     flag = false
-    self.my_each do |x|
+    help = self
+    help.my_each do |x|
       flag = !yield(x)
       break if not flag  
     end 
@@ -69,7 +73,8 @@ module Enumerable
   # my_count
   def my_count 
     count = 0
-    self.my_each do |x|
+    help = self
+    help.my_each do |x|
       if block_given?
       if yield(x) 
         count += 1
@@ -84,8 +89,9 @@ module Enumerable
   # my_map
   def my_map(&block) 
     array = []
-    return self unless block or block_given?
-    self.my_each do |x|
+    help = self
+    return help unless block or block_given?
+    help.my_each do |x|
       if block_given?
         array<<yield(x)
       else 
