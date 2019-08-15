@@ -1,19 +1,18 @@
 module Enumerable
-
     def my_each 
-      i=0
-      while i<self.length
+      i = 0
+      while i < self.length
        yield(self[i])
-       i+=1
+       i += 1
       end
       self
     end
     
     def my_each_with_index
-      i=0
-      while i<self.length
+      i = 0
+      while i < self.length
         yield(self[i], i )
-        i+=1
+        i += 1
       end
       self
     end
@@ -62,7 +61,6 @@ module Enumerable
         if block_given?
         if yield(x) 
           count += 1
-        
         else 
           count += 1
         end
@@ -77,7 +75,6 @@ module Enumerable
         array.push(yield(x))
       end
       array
-  
     end
   
     def my_inject (*item)
@@ -90,10 +87,7 @@ module Enumerable
   end
   
   
-     
-  
   # Test all methods
-  
   # puts "--my_each--"
   # [1,2,3,4].my_each { |num| puts num }
   
@@ -117,7 +111,7 @@ module Enumerable
   # p ["ab","abc","abcdta"].my_count {|x|}
   
   # puts "--my_map--"
-  # [1,2,3,4].my_map { |num| puts num*2 }
+  # [1,2,3,4].my_map { |num| puts num * 2 }
   
   # puts "--my_inject--"
-  # [2,4,5].my_inject {|a,b| a+b}
+  # [2,4,5].my_inject {|a, b| a + b}
