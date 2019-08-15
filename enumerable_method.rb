@@ -104,12 +104,13 @@ module Enumerable
   # my_inject
   def my_inject(*item)
     val = self[0]
-    for i in self[1..self.length] do
-      val=yield(val, i)
+    help = self
+    for i in help[1..help.length] do
+      val = yield(val, i)
     end
     val
   end
-  end
+end
   
   
   # # Test all methods
