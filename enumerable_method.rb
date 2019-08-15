@@ -75,11 +75,11 @@ module Enumerable
     count = 0
     help = self
     help.my_each do |x|
-      if block_given?
+    if block_given?
       if yield(x) 
         count += 1
       else 
-        count += 1
+        count = count + 1
       end
     end
     end
@@ -90,14 +90,14 @@ module Enumerable
   def my_map(&block) 
     array = []
     help = self
-    return help unless block or block_given?
+    return help unless block || block_given?
     help.my_each do |x|
-      if block_given?
-        array<<yield(x)
-      else 
+    if block_given?
+      array << yield(x)
+    else 
       array << block.call(x)
     end
-  end
+    end
   array
   end
 
