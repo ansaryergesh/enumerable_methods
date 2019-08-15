@@ -80,7 +80,7 @@ module Enumerable
     def my_inject (*item)
       val = self[0]
       for i in self[1..self.length] do
-        val=yield(val,i)
+        val=yield(val, i)
       end
       val
     end
