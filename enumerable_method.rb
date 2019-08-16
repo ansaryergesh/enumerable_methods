@@ -83,12 +83,12 @@ module Enumerable
   def my_map(&block)
     array = []
     help = self
-    return help unless block || block_given?
+    return help unless block || block_given? 
     help.my_each do |x|
-      if block_given?
-        array << yield(x)
+      array = if block_given?
+        yield(x)
       else
-        array << block.call(x)
+        block.call(x)
       end
     end
     array
@@ -97,7 +97,7 @@ module Enumerable
   # my_inject
   def my_inject(val = self[0])
     help = self
-    for i in help[1..help.length] do
+    help[1..help.length].each do |i|
       val = yield(val, i)
     end
     val
