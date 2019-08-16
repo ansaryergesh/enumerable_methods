@@ -4,6 +4,7 @@
 module Enumerable
   # my_each method
   def my_each
+    
     help = self 
     i = 0
     while i < help.length
