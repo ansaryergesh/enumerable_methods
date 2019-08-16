@@ -61,7 +61,7 @@ module Enumerable
     help = self
     help.my_each do |x|
       flag = !yield(x)
-      break if !flag
+      break unless flag
     end
     flag
   end
@@ -72,9 +72,7 @@ module Enumerable
     help = self
     help.my_each do |x|
       if block_given?
-        if yield(x)
-          count += 1
-        end
+        count += 1 if yield(x)
         count += 1
       end
     end
@@ -105,3 +103,6 @@ module Enumerable
     val
   end
 end
+
+puts "--my_count--"
+p ["ab","abc","abcdta"].my_count {|x|}
