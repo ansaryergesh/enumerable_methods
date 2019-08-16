@@ -125,4 +125,4 @@ end
   # puts "--my_map--"
   # [1,2,3,4].my_map { |num| puts num * 2 }
   # puts "--my_inject--"
-  # [2,4,5].my_inject {|a, b| a + b}
+    # [2,4,5].my_inject {|a, b| a + b}
