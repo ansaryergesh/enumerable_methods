@@ -4,7 +4,7 @@
 module Enumerable
   # my_each method
   def my_each
-    help = self 
+    help = self
     i = 0
     while i < help.length
       yield(help[i])
@@ -28,18 +28,18 @@ module Enumerable
   def my_select 
     array = []
     help = self
-      help.my_each do |x|
-        array << x if yield(x)
-      end
-      array
+    help.my_each do |x|
+      array << x if yield(x)
+    end
+    array
   end
 
   # my_all
-  def my_all? 
+  def my_all?
     flag = true
     help = self
     help.my_each do |x|
-      flag = false if yield(x) == false 
+      flag = false if yield(x) == false
     end
     flag
   end
@@ -50,9 +50,9 @@ module Enumerable
     help = self
     help.my_each do |x|
       flag =  yield(x)
-        break if flag
+      break if flag
     end
-      flag  
+    flag
   end
 
   # my_none?
@@ -61,20 +61,20 @@ module Enumerable
     help = self
     help.my_each do |x|
       flag = !yield(x)
-      break if !flag  
-    end 
+      break if !flag
+    end
     flag
   end
 
   # my_count
-  def my_count 
+  def my_count
     count = 0
     help = self
     help.my_each do |x|
       if block_given?
-        if yield(x) 
+        if yield(x)
           count += 1
-        else 
+        else
           count = count + 1
         end
       end
@@ -90,7 +90,7 @@ module Enumerable
     help.my_each do |x|
       if block_given?
         array << yield(x)
-      else 
+      else
         array << block.call(x)
       end
     end
@@ -107,7 +107,7 @@ module Enumerable
     val
   end
 end
-  
+
   # # Test all methods
   # puts "--my_each--"
   # [1,2,3,4].my_each { |num| puts num }
