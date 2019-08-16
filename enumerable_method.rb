@@ -103,6 +103,3 @@ module Enumerable
     val
   end
 end
-
-puts "--my_count--"
-p ["ab","abc","abcdta"].my_count {|x|}
