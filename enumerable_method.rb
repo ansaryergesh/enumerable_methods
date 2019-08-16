@@ -74,9 +74,8 @@ module Enumerable
       if block_given?
         if yield(x)
           count += 1
-        else
-          count += 1
         end
+        count += 1
       end
     end
     count
@@ -98,8 +97,7 @@ module Enumerable
   end
 
   # my_inject
-  def my_inject()
-    val = self[0]
+  def my_inject(val = self[0])
     help = self
     for i in help[1..help.length] do
       val = yield(val, i)
