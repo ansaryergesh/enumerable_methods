@@ -83,11 +83,11 @@ module Enumerable
   def my_map(&block)
     array = []
     help = self
-    return help unless block || block_given? 
+    return help unless block || block_given?
     help.my_each do |x|
       array = if block_given?
         yield(x)
-      else
+      if
         block.call(x)
       end
     end
