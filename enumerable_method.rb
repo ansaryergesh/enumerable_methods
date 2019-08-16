@@ -29,7 +29,7 @@ module Enumerable
     array = []
     help = self
       help.my_each do |x|
-          array << x if yield(x)
+        array << x if yield(x)
       end
       array
   end
@@ -109,7 +109,6 @@ module Enumerable
 end
   
   # # Test all methods
-  
   # puts "--my_each--"
   # [1,2,3,4].my_each { |num| puts num }
   
