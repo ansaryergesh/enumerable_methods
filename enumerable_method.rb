@@ -61,7 +61,7 @@ module Enumerable
     help = self
     help.my_each do |x|
       flag = !yield(x)
-      break unless !flag  
+      break if !flag  
     end 
     flag
   end
@@ -108,3 +108,32 @@ module Enumerable
   end
 end
   
+  # # Test all methods
+  
+  # puts "--my_each--"
+  # [1,2,3,4].my_each { |num| puts num }
+  
+  # puts "--my_each_with_index--"
+  # [1,2,3,4].my_each_with_index { |num,index| puts "#{num} : #{index}"}
+  
+  # puts "--my_select--"
+  # strings = %w(ruby language course)
+  # p ss = strings.my_select {|words| words.include?("r") }
+  
+  # puts "--my_all--"
+  # p ["ab","abc","abcdta"].my_all? { |x| x.length >= 2 }
+  
+  # puts "--my_any--"
+  # p ["Ariel","Martin","Darwin","Michaleaaa","Art"].my_any? {|a| a.length >= 9}
+  
+  # puts "--my_none--"
+  # p ["ab","abc","abcdta"].my_none? { |x| x.length >= 2 }
+  
+  # puts "--my_count--"
+  # p ["ab","abc","abcdta"].my_count {|x|}
+  
+  # puts "--my_map--"
+  # [1,2,3,4].my_map { |num| puts num * 2 }
+  
+  # puts "--my_inject--"
+  # [2,4,5].my_inject {|a, b| a + b}
