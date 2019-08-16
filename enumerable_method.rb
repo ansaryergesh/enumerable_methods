@@ -105,4 +105,3 @@ module Enumerable
     val
   end
 end
-
